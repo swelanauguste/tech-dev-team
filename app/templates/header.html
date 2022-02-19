@@ -1,0 +1,30 @@
+<ul class="nav justify-content-end p-3">
+
+    <li class="nav-item">
+        <div class="dropdown">
+            <a class="nav-link"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-person-lines-fill fs-3 text-dark"></i>
+            </a>
+            <ul class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton1">
+
+                {% if request.user.is_authenticated %}
+                <li><a class="dropdown-item"
+                        href="#">Profile</a></li>
+                <li><a class="dropdown-item"
+                        href="{% url 'account_logout' %}">Logout</a></li>
+
+                {% else %}
+                <li><a class="dropdown-item"
+                        href="{% url 'account_login' %}">Login</a></li>
+                <li><a class="dropdown-item"
+                        href="{% url 'account_signup' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </li>
+</ul>
