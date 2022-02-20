@@ -22,14 +22,14 @@ class TimeStampMixin(models.Model):
         abstract = True
 
 
-class Documents(TimeStampMixin):
+class Document(TimeStampMixin):
     """
     Model for storing documents
     """
 
     name = models.CharField(max_length=255, unique=True)
     description = models.TextField(blank=True)
-    document = models.FileField(upload_to="documents/")
+    file = models.FileField(upload_to="documents/")
     # uploaded_by = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
     def __str__(self):
