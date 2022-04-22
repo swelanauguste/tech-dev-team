@@ -1,21 +1,18 @@
 <div class="col-lg-8 mx-auto my-5 small">
-  <ul style="list-style-type:none;">
-    {% for result in object_list %}
-    <li>
-      <div class="fs-6">
-        <a class="text-dark text-decoration-none" href="">
-          {{ result.name|title }}
-        </a>
-      </div>
-    </li>
-    <ul>
-      <li class="small text-muted">
-        {{ result.description|truncatechars:100 }}
-      </li>
-      <li class="small text-muted">
-        {{ result.description|truncatechars:100 }}
-      </li>
-    </ul>
-    {% endfor %}
+  {% for result in object_list %}
+  <div class="fs-5">
+    <a class="text-dark text-decoration-none"
+      href="">
+      {{ result.name|title }}
+    </a>
+  </div>
+  <div class="container">
+    {{ result.description|truncatechars:100 }}
+    <a target="_blank"
+      href="{{ result.file.url }}">
+      {{ result.name|title }}
+    </a>
+  </div>
+  {% endfor %}
   </ul>
 </div>

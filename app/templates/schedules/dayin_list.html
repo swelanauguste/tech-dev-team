@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+    
+{% endblock head_title %}
+    
+
+
+{% block content %}
+    
+    {% for day in object_list %}
+        {{day.day}}
+        {{day.tech}}
+    {% endfor %}
+        
+{% endblock content %}
+    
