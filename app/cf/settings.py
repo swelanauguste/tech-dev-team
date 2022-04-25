@@ -21,7 +21,6 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "users.apps.UsersConfig",
-    "schedules.apps.SchedulesConfig",
     "core.apps.CoreConfig",
     "django.contrib.admin",
     "django.contrib.auth",
